@@ -98,6 +98,7 @@ function createImporter(parent: Element) {
         const header = data.shift();
 
         buildCSV = importTable(editors, $parent, header, data, name);
+
       });
     }
   };
@@ -118,6 +119,7 @@ function createImporter(parent: Element) {
 export default function importFile() {
   return new Promise((resolve, reject) => {
     const dialog = generateDialog('Import CSV/JSON', 'Import CSV/JSON');
+
     const importer = createImporter(dialog.body);
 
     var submitted = false;
