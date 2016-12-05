@@ -29,6 +29,7 @@ function deriveColumns(columns: any[]) {
       });
     }
     var val = col.value;
+
     switch (val.type) {
       case 'string':
         r.type = 'string';
@@ -40,6 +41,11 @@ function deriveColumns(columns: any[]) {
       case 'real':
       case 'int':
         r.type = 'number';
+        r.domain = val.range;
+        break;
+      case 'multivalue':
+        r.type = 'heatmapcustom';
+        r.datalength = val.datalength;
         r.domain = val.range;
         break;
       default:
