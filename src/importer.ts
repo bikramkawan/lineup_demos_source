@@ -46,6 +46,8 @@ function deriveColumns(columns: any[]) {
       case 'multivalue':
         r.type = 'heatmapcustom';
         r.datalength = val.datalength;
+        r.colorrange = val.colorrange;
+        r.sort ='min';
         r.domain = val.range;
         break;
       default:
