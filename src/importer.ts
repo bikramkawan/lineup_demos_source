@@ -42,6 +42,7 @@ function deriveColumns(columns: any[]) {
       case 'int':
         r.type = 'number';
         r.domain = val.range;
+        r.renderertype = ['number', 'circle'];
         break;
       case 'multivalue':
         r.type = 'heatmapcustom';
@@ -49,7 +50,8 @@ function deriveColumns(columns: any[]) {
         r.colorrange = val.colorrange;
         r.sort = val.sort;
         r.domain = val.range;
-        r.renderertype=['heatmapcustom', 'boxplot', 'sparkline', 'threshold', 'verticalbar'];
+        r.threshold = val.threshold;
+        r.renderertype = ['heatmapcustom', 'boxplot', 'sparkline', 'threshold', 'verticalbar'];
         break;
       default:
         r.type = 'string';
